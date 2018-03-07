@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Service Lifecycles in .NET Core</title>
+        <style>
+
+    html body {
+        font-family: '#ZgotmplZ', sans-serif;
+        background-color: #ffffff;
+    }
+
+    :root {
+        --accent: #006699;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://blog.mneundorfer.de/css/main.css">
+
+
+ <link rel="stylesheet" href="/css/custom.css"> 
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira%20Sans%3a300">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/zsh.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/docker.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/powershell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yml.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.38-DEV" />
+        
+        
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+        
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Service Lifecycles in .NET Core</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/tech/">Tech</a></li>
+                            
+                                <li><a href="/legal/">Legal</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:mail@mneundorfer.de"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/mneundorfer/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/max9ba/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/m2dax/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/tech/netcore-di-lifetimes/">Service Lifecycles in .NET Core</a></h4>
+    <h5>2018-01-24</h5>
+    
+    <a href="https://blog.mneundorfer.detags/dotnet-core">
+        <kbd class="item-tag">dotnet-core</kbd>
+    </a>
+    
+    <a href="https://blog.mneundorfer.detags/dependency-injection">
+        <kbd class="item-tag">dependency-injection</kbd>
+    </a>
+    
+    <a href="https://blog.mneundorfer.detags/lifecycle">
+        <kbd class="item-tag">lifecycle</kbd>
+    </a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="intro">Intro</h1>
+
+<p>The <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection#service-lifetimes-and-registration-options">official documentation</a> only has a brief overview of the available lifetimes of services when using the DI mechanism of .NET Core. An additional great explanation of the lifetimes themselves can be found in this extensive <a href="https://stackoverflow.com/a/38139500">answer on SO</a>.</p>
+
+<p>Although it seems trivial at first, I had to find out the hard way what it actually means when programming a real-life application.</p>
+
+<p>First of all, a short sum-up of the two resources given above: Services in .NET Core can be configured with three different lifetimes: <code>Transient</code>, <code>Scoped</code> and <code>Singleton</code>.</p>
+
+<h1 id="the-setup">The Setup</h1>
+
+<p>Now, lets assume the following situation: We have three classes in place:</p>
+
+<ul>
+<li><code>DataListener</code>: This class contains a callback which is invoked from outside the HTTP pipeline. In my current project, that&rsquo;s a ZeroMQ message bus.</li>
+<li><code>DataHandler</code>: The actual user of the data in the <code>DataCache</code>.</li>
+</ul>
+
+<pre><code class="language-cs">
+public class DataListener : IDataListener {
+
+    private readonly IDataHandler _dataHandler;
+
+    public DataListener(IDataHandler dataHandler) {
+        _dataHandler = dataHandler;
+    }
+
+    private void Callback(Data newData) {
+        _dataHandler.DoSomethingWhenDataHasChanged(newData);
+    }
+
+}
+
+public class DataHandler : IDataHandler {
+
+    public DataHandler() {
+
+    }
+
+    public void DoSomethingWhenDataHasChanged(Data newData) {
+        // Now do something fancy...
+    }
+
+}
+</code></pre>
+
+<p>It is pretty obvious that the scope of the <code>DataListener</code> has to be <code>Singleton</code>, as the callback is registered once on the startup of the application. The <code>DataHandler</code> can actually use a <code>Transient</code> scope - which should always be the scope to look for, if possible.</p>
+
+<pre><code class="language-cs"># Startup.cs
+public void ConfigureServices(...) {
+    services.AddSingleton&lt;IDataListener&gt;(DataListener);
+    services.AddTransient&lt;IDataHandler&gt;(DataHandler);
+}
+</code></pre>
+
+<p>So far, so good. The important part to recognize here is the following: Although explicitly marked with a <code>Transient</code> scope, during the whole lifecycle of the application there will <em>only be exactly one instance</em> of the <code>DataHandler</code>. This part is crucial. And also if, when you think about it for just a second, it makes perfect sense - it cost me enough time that I thought writing some lines about it so I will never forget it is worth it.</p>
+
+<h1 id="the-secret">The Secret</h1>
+
+<p>Well, honestly - there is no secret. Again, think about it. This is the dependency graph:</p>
+
+<pre><code class="language-bash">DataHandler &lt;-- DataListener
+</code></pre>
+
+<p>So here is what happens: During startup of the application, the <code>DateListener</code> is instantiated. It is instantiated exactly <em>once</em>, because we told him this exact thing. When this happens, the dependency to <code>DataHandler</code> is resolved - <code>DataHandler</code> is also instantiated and injected in the constructor. And therefore, the <code>DataHandler</code> also will behave like a <code>Singleton</code> - at least as long as it is not used by other <code>Transient</code> classes&hellip;</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; 2018 Maximilian Neundorfer</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hypriot on ...</title>
+    <link>https://blog.mneundorfer.de/tags/hypriot/</link>
+    <description>Recent content in Hypriot on ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Feb 2018 22:06:11 +0100</lastBuildDate>
+    
+	<atom:link href="https://blog.mneundorfer.de/tags/hypriot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RPi3, Hypriot &amp; Kubernetes</title>
+      <link>https://blog.mneundorfer.de/tech/hypriot-k8s/</link>
+      <pubDate>Sun, 11 Feb 2018 22:06:11 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tech/hypriot-k8s/</guid>
+      <description>Base Link: Hypriot-Docs
+Install Hypriot  Hypriot-Releases Use Rufus to flash  Setup RPi Network Connectivity WLAN is not active by default (wlan0 Interface doesn&#39;t support scanning : Network is down when sudo iwlist wlan0 scan).
+# bring it up... sudo ifconfig wlan up  # credentials sudo nano /etc/wpa_supplicant/wpa_supplicant.conf network={ ssid=&amp;quot;SSID&amp;quot; psk=&amp;quot;PASSWORD&amp;quot; }  sudo nano /etc/network/interfaces # if configuration #auto eth0 # iface eth0 inet dhcp auto wlan0 iface wlan0 inet dhcp wpa_conf /etc/wpa_supplicant/wpa_supplicant.</description>
+    </item>
+    
+  </channel>
+</rss>

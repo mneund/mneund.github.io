@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travis on ...</title>
+    <link>https://blog.mneundorfer.de/tags/travis/</link>
+    <description>Recent content in Travis on ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jan 2018 20:23:22 +0100</lastBuildDate>
+    
+	<atom:link href="https://blog.mneundorfer.de/tags/travis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Static GH Pages with Hugo and TravisCI</title>
+      <link>https://blog.mneundorfer.de/tech/hugo-ghpages-travis/</link>
+      <pubDate>Thu, 18 Jan 2018 20:23:22 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tech/hugo-ghpages-travis/</guid>
+      <description>After a few tries in the last couple of years to establish an own homepage/blog, I learned about Hugo and GitHub pages from a colleague at work. And after playing around a little bit, I really liked the idea of using static pages for that exact purpose. And again, Hugo really is a great tool! Nevertheless, I did not find it that trivial, to get the whole setup of how to really just write some Markdown on your machine, and having some magic happening until your compiled page appears under your custom domain.</description>
+    </item>
+    
+  </channel>
+</rss>

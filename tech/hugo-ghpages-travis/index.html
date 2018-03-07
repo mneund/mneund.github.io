@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Static GH Pages with Hugo and TravisCI</title>
+        <style>
+
+    html body {
+        font-family: '#ZgotmplZ', sans-serif;
+        background-color: #ffffff;
+    }
+
+    :root {
+        --accent: #006699;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://blog.mneundorfer.de/css/main.css">
+
+
+ <link rel="stylesheet" href="/css/custom.css"> 
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira%20Sans%3a300">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/zsh.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/docker.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/powershell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yml.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.38-DEV" />
+        
+        
+        
+    </head>
+
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+    <body>
+        
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Static GH Pages with Hugo and TravisCI</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/tech/">Tech</a></li>
+                            
+                                <li><a href="/legal/">Legal</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:mail@mneundorfer.de"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/mneundorfer/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/max9ba/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/m2dax/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/tech/hugo-ghpages-travis/">Static GH Pages with Hugo and TravisCI</a></h4>
+    <h5>2018-01-18</h5>
+    
+    <a href="https://blog.mneundorfer.detags/hugo">
+        <kbd class="item-tag">hugo</kbd>
+    </a>
+    
+    <a href="https://blog.mneundorfer.detags/travis">
+        <kbd class="item-tag">travis</kbd>
+    </a>
+    
+    <a href="https://blog.mneundorfer.detags/gh-pages">
+        <kbd class="item-tag">gh-pages</kbd>
+    </a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>After a few tries in the last couple of years to establish an own homepage/blog, I learned about <a href="https://gohugo.io/">Hugo</a> and GitHub pages from a colleague at work. And after playing around a little bit, I really liked the idea of using static pages for that exact purpose. And again, Hugo really is a great tool! Nevertheless, I did not find it that trivial, to get the whole setup of how to really just write some Markdown on your machine, and having some magic happening until your compiled page appears under your custom domain. That&rsquo;s why I took a few notes to that&hellip;</p>
+
+<h1 id="hugo-to-the-rescue">Hugo to the Rescue</h1>
+
+<p>Hugo makes it really easy to come up just with some content, and then having someone else care about the visualization. Basically, you just throw some Markdown at it, tell him about one of <a href="https://themes.gohugo.io/">multiple themes</a> to use, and have it spit out your final page. Since there are plenty of tutorials on how to use it (and also, it really is not that complicated - at least the basic use cases) I leave you with that.</p>
+
+<h1 id="use-your-github">Use your GitHub</h1>
+
+<p>Since people are already using GitHub to <a href="https://dev.to/und0ck3d/organizing-your-life-using-github-6an">organize their life</a>, why not use it for hosting your website? <a href="https://pages.github.com/">GitHub Pages</a> is the feature you are looking for. It takes your web page and just hosts it. And since we already got that page from Hugo&hellip;!</p>
+
+<h1 id="let-travis-do-the-work">Let Travis do the Work</h1>
+
+<p>Okay, now we&rsquo;ve got it all. Just write your content, compile beautiful HTML and CSS with Hugo, and then - take the output, and commit it to your GitHub page. Right? Well, you can do that. But really, there are better ways. For starters, you can leverage <a href="https://travis-ci.org/">Travis CI</a> - and for open source projects, its free!</p>
+
+<h2 id="travis-setup">Travis Setup</h2>
+
+<p>First of all - if not already done - sign up using your GitHub account.</p>
+
+<p>Then go to the <code>Profile</code> view and activate the repository from which you would like to build your page. By default, Travis sees all your public projects, but you have to enable them seperately.</p>
+
+<p>Then, within the settings for the activated repository, create a new environment variable named <code>GITHUB_TOKEN</code>. This then will be passed as secret variable to the build container. Now this needs to be filled with an actual token to allow Travis accessing the repository. Generate it <a href="https://github.com/settings/tokens/new">here</a>, the <code>repo</code> scope should do it.</p>
+
+<h2 id="github-repo-setup">GitHub Repo Setup</h2>
+
+<p>Travis is set up and waiting for work to do. Just place a file named <code>.travis.yml</code> in the root of your repo: It is the configuration file for Travis and will be picked up automatically.</p>
+
+<pre><code>language: go
+
+# This gets the latest Go version from master
+go:
+  - master
+
+# Install the latest Hugo - you could also just add the binary 
+# to your repo, but I like to keep that clean
+install:
+  - go get github.com/spf13/hugo
+
+# Here's the actual work: Build your static pages
+script:
+  - hugo
+
+# Here is what finally happens:
+# Using the pages provider, just get what has been compiled into public
+# (the default Hugo output folder) and push it to the given repo on
+# branch master, using the given token
+deploy:
+  provider: pages
+  skip_cleanup: true
+  repo: {user}/{user}.github.io
+  target_branch: master
+  local_dir: public
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+</code></pre>
+
+<p>Also, the <code>{user}/{user}.github.io</code> repo has to be created, if not done yet.</p>
+
+<p>Now, when <code>push</code>ing to your <code>master</code> branch, the CI pipeline (which here does nothing but generate static pages and push them to another repository) will be triggered.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; 2018 Maximilian Neundorfer</p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

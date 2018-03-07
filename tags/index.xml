@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on ...</title>
+    <link>https://blog.mneundorfer.de/tags/</link>
+    <description>Recent content in Tags on ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jan 2018 21:01:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://blog.mneundorfer.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://blog.mneundorfer.de/tags/dependency-injection/</link>
+      <pubDate>Wed, 24 Jan 2018 21:01:00 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/dependency-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://blog.mneundorfer.de/tags/docker/</link>
+      <pubDate>Sat, 17 Feb 2018 22:46:19 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dotnet Core</title>
+      <link>https://blog.mneundorfer.de/tags/dotnet-core/</link>
+      <pubDate>Wed, 24 Jan 2018 21:01:00 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/dotnet-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gh Pages</title>
+      <link>https://blog.mneundorfer.de/tags/gh-pages/</link>
+      <pubDate>Thu, 18 Jan 2018 20:23:22 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/gh-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://blog.mneundorfer.de/tags/hugo/</link>
+      <pubDate>Thu, 18 Jan 2018 20:23:22 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hypriot</title>
+      <link>https://blog.mneundorfer.de/tags/hypriot/</link>
+      <pubDate>Sun, 11 Feb 2018 22:06:11 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/hypriot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lifecycle</title>
+      <link>https://blog.mneundorfer.de/tags/lifecycle/</link>
+      <pubDate>Wed, 24 Jan 2018 21:01:00 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/lifecycle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pihole</title>
+      <link>https://blog.mneundorfer.de/tags/pihole/</link>
+      <pubDate>Thu, 15 Feb 2018 21:06:11 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/pihole/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portainer</title>
+      <link>https://blog.mneundorfer.de/tags/portainer/</link>
+      <pubDate>Sat, 17 Feb 2018 22:46:19 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/portainer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rpi</title>
+      <link>https://blog.mneundorfer.de/tags/rpi/</link>
+      <pubDate>Sat, 17 Feb 2018 22:46:19 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/rpi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis</title>
+      <link>https://blog.mneundorfer.de/tags/travis/</link>
+      <pubDate>Thu, 18 Jan 2018 20:23:22 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tags/travis/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

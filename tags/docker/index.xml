@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on ...</title>
+    <link>https://blog.mneundorfer.de/tags/docker/</link>
+    <description>Recent content in Docker on ...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Feb 2018 22:46:19 +0100</lastBuildDate>
+    
+	<atom:link href="https://blog.mneundorfer.de/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Portainer</title>
+      <link>https://blog.mneundorfer.de/tech/portainer/</link>
+      <pubDate>Sat, 17 Feb 2018 22:46:19 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tech/portainer/</guid>
+      <description> Setup Portainer docker volume create portainer_data docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portai  Enable Docker API for Remote Access (obviously only relevant for systems other than the one where Portainer is running on)
+sudo vi /lib/systemd/system/docker.service # Modify the line that starts with ExecStart to look like this: ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:4243 systemctl daemon-reload sudo service docker restart curl http://localhost:4243/version  </description>
+    </item>
+    
+    <item>
+      <title>PiHole</title>
+      <link>https://blog.mneundorfer.de/tech/pihole/</link>
+      <pubDate>Thu, 15 Feb 2018 21:06:11 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tech/pihole/</guid>
+      <description>Install  DockerHub Required for RasPi: Multiarch-Builds  Basic configuration (see also GitHub repo)
+IP_LOOKUP=&amp;quot;$(ip route get 8.8.8.8 | awk &#39;{ print $NF; exit }&#39;)&amp;quot; IPv6_LOOKUP=&amp;quot;$(ip -6 route get 2001:4860:4860::8888 | awk &#39;{ print $10; exit }&#39;)&amp;quot; IP=&amp;quot;${IP:-$IP_LOOKUP}&amp;quot; IPv6=&amp;quot;${IPv6:-$IPv6_LOOKUP}&amp;quot; DOCKER_CONFIGS=&amp;quot;/whereever/the/volumes/should/go/to&amp;quot;  Spin up the container:
+docker run -d \ --name pihole \ -p 53:53/tcp -p 53:53/udp -p 80:80 \ -v &amp;quot;${DOCKER_CONFIGS}/pihole/:/etc/pihole/&amp;quot; \ -v &amp;quot;${DOCKER_CONFIGS}/dnsmasq.d/:/etc/dnsmasq.d/&amp;quot; \ -e ServerIP=&amp;quot;${IP}&amp;quot; \ -e ServerIPv6=&amp;quot;${IPv6}&amp;quot; \ --restart=unless-stopped \ diginc/pi-hole-multiarch:debian_armhf  Make sure everything went fine</description>
+    </item>
+    
+    <item>
+      <title>RPi3, Hypriot &amp; Kubernetes</title>
+      <link>https://blog.mneundorfer.de/tech/hypriot-k8s/</link>
+      <pubDate>Sun, 11 Feb 2018 22:06:11 +0100</pubDate>
+      
+      <guid>https://blog.mneundorfer.de/tech/hypriot-k8s/</guid>
+      <description>Base Link: Hypriot-Docs
+Install Hypriot  Hypriot-Releases Use Rufus to flash  Setup RPi Network Connectivity WLAN is not active by default (wlan0 Interface doesn&#39;t support scanning : Network is down when sudo iwlist wlan0 scan).
+# bring it up... sudo ifconfig wlan up  # credentials sudo nano /etc/wpa_supplicant/wpa_supplicant.conf network={ ssid=&amp;quot;SSID&amp;quot; psk=&amp;quot;PASSWORD&amp;quot; }  sudo nano /etc/network/interfaces # if configuration #auto eth0 # iface eth0 inet dhcp auto wlan0 iface wlan0 inet dhcp wpa_conf /etc/wpa_supplicant/wpa_supplicant.</description>
+    </item>
+    
+  </channel>
+</rss>
